@@ -1,0 +1,20 @@
+---
+- name: Setup
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Download extra deb files
+      ansible.builtin.import_tasks: ../tasks/download.yaml
+    - name: Install apt packages 
+      become: yes
+      ansible.builtin.import_tasks: ../tasks/apt.yaml
+    - name: Install python packages
+      ansible.builtin.import_tasks: ../tasks/python.yaml
+    - name: Install gef
+      ansible.builtin.import_tasks: ../tasks/gef.yaml
+    - name: Install ghidra
+      ansible.builtin.import_tasks: ../tasks/ghidra.yaml
+      become: yes
+    - name: Remove installers
+      ansible.builtin.import_tasks: ../tasks/clean.yaml
+

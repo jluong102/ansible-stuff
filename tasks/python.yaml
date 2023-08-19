@@ -1,0 +1,10 @@
+---
+- name: Install pwntools
+  ansible.builtin.pip:
+    name: pwntools
+- name: Install virtualenvwrapper
+  ansible.builtin.pip:
+    name: virtualenvwrapper
+- name: Install ipython
+  ansible.builtin.pip:
+    name: ipython

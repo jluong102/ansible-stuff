@@ -1,0 +1,5 @@
+---
+- name: Run gef installer
+  ansible.builtin.shell: bash /tmp/gef.sh
+  args: 
+    chdir: ~/

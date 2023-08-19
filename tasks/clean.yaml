@@ -1,0 +1,21 @@
+---
+- name: Remove discord installer 
+  ansible.builtin.file:
+    path: /tmp/discord.deb
+    state: absent
+- name: Remove google installer
+  ansible.builtin.file:
+    path: /tmp/google.deb
+    state: absent
+- name: Remove gef installer
+  ansible.builtin.file:
+    path: /tmp/gef.sh
+    state: absent
+- name: Remove steam installer
+  ansible.builtin.file:
+    path: /tmp/steam.deb
+    state: absent
+- name: Remove ghidra zip 
+  ansible.builtin.file:
+    path: /tmp/ghidra.zip
+    state: absent

@@ -1,0 +1,21 @@
+---
+- name: Download discord
+  ansible.builtin.get_url:
+    url: https://discord.com/api/download?platform=linux&format=deb
+    dest: /tmp/discord.deb
+- name: Download chrome
+  ansible.builtin.get_url:
+    url: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    dest: /tmp/google.deb
+- name: Download gef 
+  ansible.builtin.get_url: 
+    url: https://gef.blah.cat/sh
+    dest: /tmp/gef.sh
+- name: Download steam 
+  ansible.builtin.get_url:
+    url: https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb
+    dest: /tmp/steam.deb
+- name: Download ghidra
+  ansible.builtin.get_url:
+    url: https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.3.2_build/ghidra_10.3.2_PUBLIC_20230711.zip
+    dest: /tmp/ghidra.zip

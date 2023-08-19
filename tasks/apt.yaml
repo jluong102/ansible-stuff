@@ -1,0 +1,90 @@
+---
+- name: Install vim 
+  ansible.builtin.apt:
+    name: vim
+    state: present
+- name: Install gcc
+  ansible.builtin.apt:
+    name: 
+      - gcc
+      - g++ 
+    state: present
+- name: Instal gdb
+  ansible.builtin.apt:
+    name: gdb
+    state: present
+- name: Install budgie
+  ansible.builtin.apt:
+    name: budgie-desktop
+    state: present
+- name: Install wifi driver
+  ansible.builtin.apt:
+    name: firmware-iwlwifi
+    state: present
+- name: Install sakura
+  ansible.builtin.apt:
+    name: sakura
+    state: present
+- name: Install htop
+  ansible.builtin.apt:
+    name: htop
+    state: present
+- name: Install rust
+  ansible.builtin.apt:
+    name: 
+    - rustc 
+    - cargo
+    state: present
+- name: Install docker 
+  ansible.builtin.apt:
+    name: docker
+    state: present
+- name: Install git 
+  ansible.builtin.apt:
+    name: git
+    state: present
+- name: Install curl
+  ansible.builtin.apt:
+    name: curl
+    state: present
+- name: Install pip
+  ansible.builtin.apt:
+    name: python3-pip
+    state: present
+- name: Install tmux
+  ansible.builtin.apt:
+    name: tmux
+    state: present
+- name: Install java
+  ansible.builtin.apt:
+    name: 
+      - openjdk-17-jdk 
+      - openjdk-17-jre
+    state: present
+
+# Setup and install spotify 
+- name: Add spotify keys 
+  ansible.builtin.apt_key:
+    url: https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg
+    state: present
+- name: Add spotify repo
+  ansible.builtin.apt_repository: 
+    repo: deb http://repository.spotify.com stable non-free
+- name: Install spotify
+  ansible.builtin.apt:
+    name: spotify-client
+    state: present
+
+# Install extra packages
+- name: Install discord
+  ansible.builtin.apt:
+    deb: /tmp/discord.deb
+    state: present
+- name: Install chrome
+  ansible.builtin.apt:
+    deb: /tmp/google.deb
+    state: present
+- name: Install steam
+  ansible.builtin.apt:
+    deb: /tmp/steam.deb
+    state: present

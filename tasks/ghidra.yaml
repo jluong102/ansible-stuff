@@ -1,0 +1,11 @@
+---
+- name: Extract ghidra
+  ansible.builtin.unarchive:
+    src: /tmp/ghidra.zip
+    dest: /usr/bin/
+- name: Create sym link to exec 
+  ansible.builtin.file:
+    src: /usr/bin/ghidra_10.3.2_PUBLIC/ghidraRun
+    dest: /usr/bin/ghidraRun
+    state: link
+    mode: '755'
