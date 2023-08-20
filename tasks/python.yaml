@@ -8,3 +8,6 @@
 - name: Install ipython
   ansible.builtin.pip:
     name: ipython
+- name: Install colorama
+  ansible.builtin.pip:
+    name: colorama

@@ -1,0 +1,4 @@
+---
+- name: Set vim as default editor
+  ansible.builtin.shell: update-alternatives --set editor /usr/bin/vim.basic 
+

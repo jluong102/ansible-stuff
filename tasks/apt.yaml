@@ -35,10 +35,6 @@
     - rustc 
     - cargo
     state: present
-- name: Install docker 
-  ansible.builtin.apt:
-    name: docker
-    state: present
 - name: Install git 
   ansible.builtin.apt:
     name: git
@@ -60,6 +56,63 @@
     name: 
       - openjdk-17-jdk 
       - openjdk-17-jre
+    state: present
+- name: Install jq 
+  ansible.builtin.apt:
+    name: jq 
+    state: present
+- name: Install wireshark
+  ansible.builtin.apt:
+    name: wireshark
+    state: present
+- name: Install binwalk
+  ansible.builtin.apt:
+    name: binwalk
+    state: present
+- name: Install php
+  ansible.builtin.apt:
+    name: php
+    state: present
+- name: Install strace
+  ansible.builtin.apt:
+    name: strace
+    state: present
+- name: Install ltrace
+  ansible.builtin.apt:
+    name: ltrace
+    state: present
+- name: Install nmap
+  ansible.builtin.apt:
+    name: nmap 
+    state: present
+- name: Install golang
+  ansible.builtin.apt:
+    name: golang
+    state: present
+- name: Install exiftool
+  ansible.builtin.apt:
+    name: exiftool
+    state: present
+
+# Setup and install docker
+- name: Add docker keys
+  ansible.builtin.apt_key:
+    url: https://download.docker.com/linux/debian/gpg 
+    state: present
+- name: Add docker repo
+  ansible.builtin.apt_repository:
+    repo: deb https://download.docker.com/linux/debian bullseye stable
+- name: Install docker 
+  ansible.builtin.apt:
+    name:
+      - ca-certificates
+      - gnupg
+      - docker
+      - docker-ce 
+      - docker-ce-cli 
+      - containerd.io 
+      - docker-buildx-plugin 
+      - docker-compose-plugin
     state: present
 
 # Setup and install spotify 

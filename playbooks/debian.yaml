@@ -15,6 +15,7 @@
     - name: Install ghidra
       ansible.builtin.import_tasks: ../tasks/ghidra.yaml
       become: yes
+    - name: Set default editor as vim
+      ansible.builtin.import_tasks: ../tasks/vim.yaml
     - name: Remove installers
       ansible.builtin.import_tasks: ../tasks/clean.yaml
-

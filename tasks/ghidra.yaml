@@ -8,4 +8,4 @@
     src: /usr/bin/ghidra_10.3.2_PUBLIC/ghidraRun
     dest: /usr/bin/ghidraRun
     state: link
-    mode: '755'
+    mode: '0755'
